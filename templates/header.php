@@ -26,10 +26,10 @@
         </li>
       </ul>
       <div>
-        <span class="text-light mx-2">
-          Zalogowany jako: <b><?= $_SESSION['loggedUser']['firstName'].' '.$_SESSION['loggedUser']['lastName'] ?></b>
-        </span>
         <?php if (IS_USER_LOGGED_IN): ?>
+          <span class="text-light mx-2">
+            Zalogowany jako: <b><?= $_SESSION['loggedUser']['firstName'].' '.$_SESSION['loggedUser']['lastName'] ?></b>
+          </span>
           <a href="logout.php" class="btn btn-primary">Wyloguj się</a>
         <?php else: ?>
           <a href="login.php" class="btn btn-primary">Zaloguj się</a>
