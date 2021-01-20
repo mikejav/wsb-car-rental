@@ -16,3 +16,5 @@ if(isset($_SESSION['loggedUser'])) {
 } else {
     define('IS_USER_LOGGED_IN', false);
 }
+
+require_once(__DIR__.'/../functions/templateComponents.php');
