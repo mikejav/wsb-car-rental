@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8"/>
 <title>Wypożyczalnia samochodów</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -14,7 +14,7 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href=".">Wypożyczalnia samochodów</a>
-      <ul class="navbar-nav mb-2 mb-md-0">
+      <ul class="navbar-nav mb-2 mb-md-0 ml-auto mr-3">
         <li class="nav-item active">
           <a class="nav-link" aria-current="page" href=".">Strona główna</a>
         </li>

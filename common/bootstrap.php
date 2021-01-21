@@ -17,4 +17,5 @@ if(isset($_SESSION['loggedUser'])) {
     define('IS_USER_LOGGED_IN', false);
 }
 
+require_once(__DIR__.'/dataConstants.php');
 require_once(__DIR__.'/../functions/templateComponents.php');

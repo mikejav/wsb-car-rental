@@ -13,12 +13,6 @@ function fuelTypeFormatter($value) {
     return value;
 }
 
-define('PETROL_TYPES', [
-    'DIESEL' => 'Diesel',
-    'PETROL' => 'Benzyna',
-    'HYBRID' => 'Hybryda',
-]);
-
 $columnDefs = [
     [
         'columnKey' => 'name',
@@ -43,6 +37,7 @@ $columnDefs = [
     [
         'columnKey' => 'color',
         'columnDisplayName' => 'Kolor',
+        'valueFormatter' => function($value) { return COLORS[$value]; },
     ],
     [
         'columnKey' => 'doors_count',
