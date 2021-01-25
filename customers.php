@@ -50,6 +50,11 @@ $columnDefs = [
         'columnDisplayName' => 'Nazwisko',
     ],
     [
+        'columnKey' => 'type',
+        'columnDisplayName' => 'Typ',
+        'valueFormatter' => function($value) { return CLIENT_TYPE[$value]; },
+    ],
+    [
         'columnKey' => 'address1',
         'columnDisplayName' => 'Adres',
     ],

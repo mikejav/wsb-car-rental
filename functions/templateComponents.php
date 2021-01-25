@@ -35,13 +35,13 @@ function printHeader($params) { ?>
  * DataGrid related stuff:
  */
 
-function printTable($addEditLink, $selectable, $columnDefs, $rows) { ?>
+function printTable($addEditLink, $withActions, $columnDefs, $rows) { ?>
     <div class="card h-100 d-flex flex-grow-1">
         <div class="table-responsive h-100">
             <table class="table m-0">
                 <thead>
                     <tr>
-                        <?php if($selectable): ?>
+                        <?php if($withActions): ?>
                             <th class="w-01 align-top">
                                 Akcje
                             </th>
@@ -55,7 +55,7 @@ function printTable($addEditLink, $selectable, $columnDefs, $rows) { ?>
                 <tbody>
                     <?php foreach($rows as $row): ?>
                         <tr>
-                            <?php if($selectable): ?>
+                            <?php if($withActions): ?>
                                 <td class="align-middle p-0 m-0">
                                     <div class="d-flex p-2">
                                         <a href="<?=$addEditLink?>?id=<?=$row['id']?>" class="btn btn-sm btn-outline-warning">Edytuj</a>

@@ -60,7 +60,7 @@ $columnDefs = [
     [
         'columnKey' => 'color',
         'columnDisplayName' => 'Kolor',
-        'valueFormatter' => function($value) { return COLORS[$value]; },
+        'valueFormatter' => function($value) { return COLOR[$value]; },
     ],
     [
         'columnKey' => 'doors_count',
@@ -73,7 +73,7 @@ $columnDefs = [
     [
         'columnKey' => 'fuel_type',
         'columnDisplayName' => 'Rodzaj paliwa',
-        'valueFormatter' => function($value) { return PETROL_TYPES[$value]; },
+        'valueFormatter' => function($value) { return PETROL_TYPE[$value]; },
     ],
 ];
 

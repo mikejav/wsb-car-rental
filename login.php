@@ -15,7 +15,7 @@ if ($email && $password) {
     $isAuthenticated = false;
     $escapedEmail = $dbConnection->real_escape_string($email);
     $escapedPassword = $dbConnection->real_escape_string(sha1($password));
-    $sql="SELECT * FROM users WHERE email='$escapedEmail' AND password='$escapedPassword'";
+    $sql="SELECT * FROM systemUsers WHERE email='$escapedEmail' AND password='$escapedPassword'";
 
     if($result = $dbConnection->query($sql)) {
         if ($result->num_rows) {
@@ -37,7 +37,7 @@ require_once('templates/header.php');
 
 ?>
 
-<div class="row">
+<div class="row flex-grow-1">
     <form class="w-50 m-auto" action="login.php" method="post">
         <?php if(isset($errorMessage)): ?>
             <div class="alert alert-danger"><?= $errorMessage ?></div>

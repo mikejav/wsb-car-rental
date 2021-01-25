@@ -1,4 +1,4 @@
-CREATE TABLE users ( -- zmienić na systemUsers
+CREATE TABLE systemUsers (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(124),
     password VARCHAR(256),
@@ -6,7 +6,7 @@ CREATE TABLE users ( -- zmienić na systemUsers
     lastName VARCHAR(124)
 );
 
-INSERT INTO users VALUES (null, 'test@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Jan', 'Kowalski'); -- haslo: test
+INSERT INTO systemUsers VALUES (null, 'test@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Jan', 'Kowalski'); -- haslo: test
 
 CREATE TABLE vehicles (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -33,6 +33,7 @@ CREATE TABLE customers (
     password VARCHAR(256),
     firstName VARCHAR(124),
     lastName VARCHAR(124),
+    type VARCHAR(32),
     address1 VARCHAR(124),
     address2 VARCHAR(124),
     city VARCHAR(124),
@@ -40,8 +41,8 @@ CREATE TABLE customers (
     createdAt DATETIME
 );
 
-INSERT INTO customers VALUES(null, 'customer1@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Edgar', 'V. Humphreys', '4041 Simpson Square', '', 'Duke', '73532', NOW());
-INSERT INTO customers VALUES(null, 'customer2@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Amanda', 'C. Moore', '3795 Jarvisville Road', '', 'Jersey City', '07307', NOW());
-INSERT INTO customers VALUES(null, 'customer3@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Lee', 'Hansley', '1513 Conference Center Way', '', 'Great Falls', '22066', NOW());
-INSERT INTO customers VALUES(null, 'customer4@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Robert', 'J. Hendricks', '1601 Kerry Way', '', 'Los Angeles', '90017', NOW());
-INSERT INTO customers VALUES(null, 'customer5@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Debra', 'C. Long', '3157 Pike Street', '', 'San Diego', '92126', NOW());
+INSERT INTO customers VALUES(null, 'customer1@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Edgar', 'V. Humphreys', 'B2C', '4041 Simpson Square', '', 'Duke', '73532', NOW());
+INSERT INTO customers VALUES(null, 'customer2@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Amanda', 'C. Moore', 'B2B', '3795 Jarvisville Road', '', 'Jersey City', '07307', NOW());
+INSERT INTO customers VALUES(null, 'customer3@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Lee', 'Hansley', 'B2C', '1513 Conference Center Way', '', 'Great Falls', '22066', NOW());
+INSERT INTO customers VALUES(null, 'customer4@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Robert', 'J. Hendricks', 'B2C', '1601 Kerry Way', '', 'Los Angeles', '90017', NOW());
+INSERT INTO customers VALUES(null, 'customer5@example.com', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'Debra', 'C. Long', 'B2B', '3157 Pike Street', '', 'San Diego', '92126', NOW());

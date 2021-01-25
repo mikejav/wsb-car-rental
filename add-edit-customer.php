@@ -4,12 +4,6 @@ require_once('./common/bootstrap.php');
 
 $fieldDefs = [
     [
-        'name' => 'email',
-        'type' => 'TEXT',
-        'label' => 'Email',
-        'required' => true,
-    ],
-    [
         'name' => 'firstName',
         'type' => 'TEXT',
         'label' => 'Imie',
@@ -19,6 +13,19 @@ $fieldDefs = [
         'name' => 'lastName',
         'type' => 'TEXT',
         'label' => 'Nazwisko',
+        'required' => true,
+    ],
+    [
+        'name' => 'email',
+        'type' => 'TEXT',
+        'label' => 'Email',
+        'required' => true,
+    ],
+    [
+        'name' => 'type',
+        'type' => 'SELECT',
+        'label' => 'Typ',
+        'options' => CLIENT_TYPE,
         'required' => true,
     ],
     [

@@ -36,7 +36,7 @@ $fieldDefs = [
         'name' => 'color',
         'type' => 'SELECT',
         'label' => 'Kolor',
-        'options' => COLORS,
+        'options' => COLOR,
         'required' => true,
     ],
     [
@@ -55,7 +55,7 @@ $fieldDefs = [
         'name' => 'fuel_type',
         'type' => 'SELECT',
         'label' => 'Rodzaj paliwa',
-        'options' => PETROL_TYPES,
+        'options' => PETROL_TYPE,
         'required' => true,
     ],
 ];
