@@ -10,7 +10,7 @@ INSERT INTO users VALUES (null, 'test@example.com', 'a94a8fe5ccb19ba61c4c0873d39
 
 CREATE TABLE vehicles (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(124),
+    manufacturer VARCHAR(124),
     model VARCHAR(124),
     describtion VARCHAR(124),
     production_date DATE,

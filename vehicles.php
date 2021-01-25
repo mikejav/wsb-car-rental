@@ -4,19 +4,26 @@ require_once('./common/bootstrap.php');
 
 require_once('templates/header.php');
 
+if (isset($_POST['DELETE_ROW'])) {
+    $rowId = $_POST['DELETE_ROW_ID'];
+    $sqlToPrepare = 'DELETE FROM vehicles WHERE id=?';
+    $stmt = $dbConnection->prepare($sqlToPrepare);
+    $stmt->bind_param('i', $rowId);
+    $stmt->execute();
+    $_SESSION['flashMessage'] = 'Pojazd został usunięty pomyślnie';
+    header("Location: vehicles.php");
+    exit();
+}
+
 $sql = "SELECT * FROM vehicles";
 
 $result = $dbConnection->query($sql);
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-function fuelTypeFormatter($value) {
-    return value;
-}
-
 $columnDefs = [
     [
-        'columnKey' => 'name',
-        'columnDisplayName' => 'Nazwa',
+        'columnKey' => 'manufacturer',
+        'columnDisplayName' => 'Producent',
     ],
     [
         'columnKey' => 'model',
@@ -54,6 +61,6 @@ $columnDefs = [
     ],
 ];
 
-printTable('add-vehicle.php', true,  $columnDefs, $rows);
-
+printFlashMessage();
+printTable('add-edit-vehicle.php', true,  $columnDefs, $rows);
 require_once('templates/footer.php');

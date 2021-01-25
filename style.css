@@ -1,0 +1,7 @@
+th, td {
+    white-space: nowrap;
+}
+
+.noselect {
+    user-select: none;
+}
