@@ -1,22 +1,49 @@
 <?php
 
 /**
+ * Layout related stuff:
+ */
+
+function printHeader($params) { ?>
+    <div class="mb-3">
+        <div class="d-flex mb-4">
+            <h1 class="mb-0"><?= $params['title'] ?></h1>
+            <?php if (isset($params['action'])): ?>
+                <a href="<?=$params['action']['link']?>" class="btn btn-primary ml-auto d-flex align-items-center"><?=$params['action']['label']?></a>
+            <?php endif ?>
+        </div>
+        <nav class="d-block mb-4">
+            <ol class="breadcrumb bg-transparent m-0 p-0">
+                <?php if (isset($params['breadcrumbs'])) foreach($params['breadcrumbs'] as $breadcrumb): ?>
+                    <li class="breadcrumb-item">
+                        <?php if (isset($breadcrumb['link'])): ?>
+                            <a href="<?= $breadcrumb['link'] ?>"><?= $breadcrumb['label'] ?></a>
+                        <?php else: ?>
+                            <?= $breadcrumb['label'] ?>
+                        <?php endif ?>
+                    </li>
+                <?php endforeach ?>
+            </ol>
+        </nav>
+        <?php if (isset($params['includeHr']) && $params['includeHr']): ?>
+            <hr>
+        <?php endif ?>
+    </div>
+<?php }
+
+/**
  * DataGrid related stuff:
  */
 
 function printTable($addEditLink, $selectable, $columnDefs, $rows) { ?>
     <div class="card h-100 d-flex flex-grow-1">
-        <div class="card-header d-flex align-items-baseline justify-content-between">
-            <div>Liczba rekordów: <b><?=count($rows)?></b></div>
-            <a href="<?=$addEditLink?>" class="btn btn-primary ml-auto">Dodaj</a>
-        </div>
         <div class="table-responsive h-100">
             <table class="table m-0">
                 <thead>
                     <tr>
                         <?php if($selectable): ?>
                             <th class="w-01 align-top">
-                                [x] Akcje
+                                Akcje
                             </th>
                         <?php endif ?>
                         <?php foreach($columnDefs as $column): ?>
@@ -89,6 +116,10 @@ function getNumberField($name, $label, $value) {
     return "<input type=\"number\" class=\"form-control\" id=\"$name\" name=\"entityValues[$name]\" value=\"$value\">";
 }
 
+function getDoubleField($name, $label, $value) {
+    return "<input type=\"number\" step=\"0.01\" class=\"form-control\" id=\"$name\" name=\"entityValues[$name]\" value=\"$value\">";
+}
+
 function getDateField($name, $label, $value) {
     return "<input type=\"date\" class=\"form-control\" id=\"$name\" name=\"entityValues[$name]\" value=\"$value\">";
 }
@@ -128,8 +159,10 @@ function printForm($cancelLink, $fieldDefs, $formValues) {
                 echo getTextareaField($fieldDef['name'], $fieldDef['label'], $fieldValue);
                 break;
             case 'NUMBER':
-            case 'DOUBLE':
                 echo getNumberField($fieldDef['name'], $fieldDef['label'], $fieldValue);
+                break;
+            case 'DOUBLE':
+                echo getDoubleField($fieldDef['name'], $fieldDef['label'], $fieldValue);
                 break;
             case 'DATE':
                 echo getDateField($fieldDef['name'], $fieldDef['label'], $fieldValue);

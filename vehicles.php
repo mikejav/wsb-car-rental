@@ -2,8 +2,6 @@
 
 require_once('./common/bootstrap.php');
 
-require_once('templates/header.php');
-
 if (isset($_POST['DELETE_ROW'])) {
     $rowId = $_POST['DELETE_ROW_ID'];
     $sqlToPrepare = 'DELETE FROM vehicles WHERE id=?';
@@ -15,8 +13,26 @@ if (isset($_POST['DELETE_ROW'])) {
     exit();
 }
 
-$sql = "SELECT * FROM vehicles";
+require_once('templates/header.php');
 
+printHeader([
+    'title' => 'Pojazdy',
+    'action' => [
+        'link' => 'add-edit-vehicle.php',
+        'label' => 'Dodaj pojazd +',
+    ],
+    'breadcrumbs' => [
+        [
+            'label' => 'Wypożyczalnia samochodów',
+            'link' => '.'
+        ],
+        [
+            'label' => 'Pojazdy',
+        ],
+    ],
+]);
+
+$sql = "SELECT * FROM vehicles";
 $result = $dbConnection->query($sql);
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 

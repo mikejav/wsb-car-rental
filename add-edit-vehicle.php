@@ -61,11 +61,12 @@ $fieldDefs = [
 ];
 
 $formValues = null;
+$editMode = isset($_GET['id']);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $validationErrors = validateFormValues($fieldDefs, $_POST['entityValues']);
     if (empty($validationErrors)) {
-        if ($_GET['id']) {
+        if ($editMode) {
             updatEentityInTable('vehicles', $fieldDefs, $_POST['entityValues'], $_GET['id']);
             $_SESSION['flashMessage'] = 'Zmiany zostały zapisane pomyślnie';
         } else {
@@ -76,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
     $formValues = $_POST['entityValues'];
-} elseif (isset($_GET['id'])) {
+} elseif ($editMode) {
     $escapedId = $dbConnection->real_escape_string($_GET['id']);
     $sql="SELECT * FROM vehicles WHERE id='$escapedId'";
     if($result = $dbConnection->query($sql)) {
@@ -87,6 +88,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 require_once('templates/header.php');
+printHeader([
+    'title' => $editMode ? 'Edycja pojazdu' : 'Dodaj pojazd',
+    'breadcrumbs' => [
+        [
+            'label' => 'Wypożyczalnia samochodów',
+            'link' => '.'
+        ],
+        [
+            'label' => 'Pojazdy',
+            'link' => 'vehicles.php'
+        ],
+        [
+            'label' => $editMode ? 'Edycja pojazdu' : 'Dodaj pojazd',
+        ],
+    ],
+    'includeHr' => true,
+]);
 
 if (isset($validationErrors) && !empty($validationErrors)) {
     printFormErrors($validationErrors);
