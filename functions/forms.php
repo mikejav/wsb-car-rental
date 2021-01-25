@@ -2,7 +2,6 @@
 
 function getTypesString($fieldDefs) {
     $result = "";
-    // gettype
 
     foreach ($fieldDefs as $fieldDef) {
         switch($fieldDef['type']) {

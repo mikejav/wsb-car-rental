@@ -20,6 +20,9 @@
           <a class="nav-link" aria-current="page" href=".">Strona główna</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="rentals.php">Wypożyczenia</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="vehicles.php">Pojazdy</a>
         </li>
         <li class="nav-item">
