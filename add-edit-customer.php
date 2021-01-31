@@ -2,6 +2,8 @@
 
 require_once('./common/bootstrap.php');
 
+guardPage();
+
 $fieldDefs = [
     [
         'name' => 'firstName',

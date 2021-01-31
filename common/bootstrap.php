@@ -20,3 +20,4 @@ if(isset($_SESSION['loggedUser'])) {
 require_once(__DIR__.'/dataConstants.php');
 require_once(__DIR__.'/../functions/templateComponents.php');
 require_once(__DIR__.'/../functions/forms.php');
+require_once(__DIR__.'/../functions/auth.php');

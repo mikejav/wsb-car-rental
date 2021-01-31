@@ -2,6 +2,8 @@
 
 require_once('./common/bootstrap.php');
 
+guardPage();
+
 if (isset($_POST['DELETE_ROW'])) {
     $rowId = $_POST['DELETE_ROW_ID'];
     $sqlToPrepare = 'DELETE FROM customers WHERE id=?';

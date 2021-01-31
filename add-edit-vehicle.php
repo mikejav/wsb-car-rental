@@ -2,6 +2,8 @@
 
 require_once('./common/bootstrap.php');
 
+guardPage();
+
 $fieldDefs = [
     [
         'name' => 'manufacturer',
@@ -13,6 +15,13 @@ $fieldDefs = [
         'name' => 'model',
         'type' => 'TEXT',
         'label' => 'Model',
+        'required' => true,
+    ],
+    [
+        'name' => 'segment',
+        'type' => 'SELECT',
+        'label' => 'Segment',
+        'options' => VEHICLE_SEGMENT,
         'required' => true,
     ],
     [

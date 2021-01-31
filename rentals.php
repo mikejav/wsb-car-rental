@@ -2,6 +2,8 @@
 
 require_once('./common/bootstrap.php');
 
+guardPage();
+
 if (isset($_POST['DELETE_ROW'])) {
     $rowId = $_POST['DELETE_ROW_ID'];
     $sqlToPrepare = 'DELETE FROM rentals WHERE id=?';
@@ -41,20 +43,20 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 $columnDefs = [
     [
-        'columnKey' => 'fromDate',
-        'columnDisplayName' => 'Od',
-    ],
-    [
-        'columnKey' => 'toDate',
-        'columnDisplayName' => 'Do',
-    ],
-    [
         'columnKey' => 'customer',
         'columnDisplayName' => 'Klient',
     ],
     [
         'columnKey' => 'vehicle',
         'columnDisplayName' => 'Pojazd',
+    ],
+    [
+        'columnKey' => 'fromDate',
+        'columnDisplayName' => 'Od',
+    ],
+    [
+        'columnKey' => 'toDate',
+        'columnDisplayName' => 'Do',
     ],
 ];
 

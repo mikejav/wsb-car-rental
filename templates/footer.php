@@ -10,5 +10,7 @@
   </div>
 </footer>
 
+<script src="hide-falsh-message.js"></script>
+
 </body>
 </html>

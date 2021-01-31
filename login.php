@@ -27,6 +27,7 @@ if ($email && $password) {
     if($isAuthenticated) {
         $_SESSION['loggedUser'] = $user;
         header("Location: .");
+        exit;
     } 
     else {
         $errorMessage = "Niepoprawny email lub hasło";

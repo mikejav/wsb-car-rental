@@ -96,7 +96,7 @@ function printFlashMessage() {
         return;
     }
 
-    echo '<div class="alert alert-success mb-4">'.$_SESSION['flashMessage']
+    echo '<div class="alert alert-success mb-4" id="FlashMessage">'.$_SESSION['flashMessage']
             .'<button type="button" class="close" onclick="location.reload(true); return false;">'
                 .'<span aria-hidden="true">&times;</span>'
             .'</button>'

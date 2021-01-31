@@ -12,6 +12,7 @@ CREATE TABLE vehicles (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     manufacturer VARCHAR(124),
     model VARCHAR(124),
+    segment VARCHAR(64),
     describtion VARCHAR(124),
     production_date DATE,
     first_registration_date DATE,
@@ -21,11 +22,11 @@ CREATE TABLE vehicles (
     fuel_type VARCHAR(32)
 );
 
-INSERT INTO vehicles VALUES (null, 'Audi', 'A3', 'Test1', NOW(), NOw(), 'BLACK', 3, 1.9, 'DIESEL');
-INSERT INTO vehicles VALUES (null, 'Lexus', 'LS', 'Test2', NOW(), NOw(), 'BLACK', 5, 3, 'PETROL');
-INSERT INTO vehicles VALUES (null, 'Toyota', 'Yaris', 'Test3', NOW(), NOw(), 'RED', 3, 1.6, 'PETROL');
-INSERT INTO vehicles VALUES (null, 'Toyota', 'Prius', 'Test4', NOW(), NOw(), 'SILVER', 5, 1.5, 'HYBRID');
-INSERT INTO vehicles VALUES (null, 'Fiat', '500', 'Test5', NOW(), NOw(), 'WHITE', 3, 1.4, 'PETROL');
+INSERT INTO vehicles VALUES (null, 'Audi', 'A3', 'A', 'Test1', NOW(), NOw(), 'BLACK', 3, 1.9, 'DIESEL');
+INSERT INTO vehicles VALUES (null, 'Lexus', 'LS', 'B', 'Test2', NOW(), NOw(), 'BLACK', 5, 3, 'PETROL');
+INSERT INTO vehicles VALUES (null, 'Toyota', 'Yaris', 'D', 'Test3', NOW(), NOw(), 'RED', 3, 1.6, 'PETROL');
+INSERT INTO vehicles VALUES (null, 'Toyota', 'Prius', 'A', 'Test4', NOW(), NOw(), 'SILVER', 5, 1.5, 'HYBRID');
+INSERT INTO vehicles VALUES (null, 'Fiat', '500', 'A', 'Test5', NOW(), NOw(), 'WHITE', 3, 1.4, 'PETROL');
 
 CREATE TABLE customers (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
